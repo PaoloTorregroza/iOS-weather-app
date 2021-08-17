@@ -93,7 +93,6 @@ final class CityViewModel: ObservableObject {
     private func getLocation() {
         CLGeocoder().geocodeAddressString(city) { (placemarks, error) in
             if let places = placemarks, let place = places.first {
-                print(place)
                 self.getWeather(coord: place.location?.coordinate)
             }
         }
@@ -141,9 +140,9 @@ final class CityViewModel: ObservableObject {
         case "04n":
             return "nightBrokenClouds"
         case "09d":
-            return "dayShowerRain"
+            return "dayShowerRains"
         case "09n":
-            return "nightShowerRain"
+            return "nightShowerRains"
         case "10d":
             return "dayRain"
         case "10n":
